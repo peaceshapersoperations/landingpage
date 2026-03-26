@@ -43,6 +43,8 @@
 @theme inline {
   --font-family-recoleta: 'Recoleta', system-ui, sans-serif;
   --font-family-poppins: 'Poppins', system-ui, sans-serif;
+
+  --font-serif: var(--font-family-recoleta);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -91,13 +93,13 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #1472ff;
+  --primary: #333254;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: #ed7256;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: #3482ad;
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
@@ -125,13 +127,13 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #1472ff;
+  --primary: #333254;
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: #ed7256;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: #3482ad;
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
@@ -174,3 +176,62 @@ li,
 a {
   font-family: var(--font-family-poppins);
 }
+
+.font-heading {
+  font-family: var(--font-family-recoleta);
+
+}
+
+.the_problem_we_solve_background {
+  background-image: url('scope/corporate-organizations.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Video control animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+
