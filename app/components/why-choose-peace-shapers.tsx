@@ -6,7 +6,7 @@ import Reveal from '@/components/ui/reveal';
 
 const WhyChoosePeaceShapers = () => {
   return (
-    <section className="bg-gray-100 pb-20 md:pb-50 pt-20">
+    <section className="bg-[#f8f3f0] pb-20 md:pb-50 pt-20">
       <Container className="space-y-16 md:space-y-30">
         <article className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-center">
           <AnimateIn animation="slideUp" delay={100}>
@@ -26,12 +26,12 @@ const WhyChoosePeaceShapers = () => {
           </AnimateIn>
         </article>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {why.map((w, index) => (
             <>
               <AnimateIn
                 animation="slideUp"
-                delay={300 + index * 200}
+                // delay={}
                 className={cn(
                   'relative overflow-hidden h-full rounded-[40px] md:rounded-[60px]',
                   Boolean(index % 2 == 0) ? 'block' : 'block md:hidden',
@@ -48,24 +48,25 @@ const WhyChoosePeaceShapers = () => {
 
               <AnimateIn
                 animation="slideUp"
-                delay={400 + index * 200}
+                // delay={400 + index * 200}
                 className="h-full"
               >
                 <article
                   key={w.heading}
                   className="flex flex-col items-start justify-center space-y-6 p-6 md:p-16 rounded-[30px] bg-white h-full"
                 >
-                  <Reveal direction="up" delay={500 + index * 200}>
-                    <span className="w-14 h-14 inline-flex font-medium font-heading text-2xl md:text-4xl rounded-full bg-primary text-white items-center justify-center">
-                      {index + 1}
-                    </span>
-                  </Reveal>
+                  <span
+                    className={cn(
+                      'w-14 h-14 inline-flex font-medium font-heading text-2xl md:text-4xl rounded-full text-white items-center justify-center',
+                      w.iconColor,
+                    )}
+                  >
+                    {index + 1}
+                  </span>
 
-                  <Reveal direction="up" delay={600 + index * 200}>
-                    <h4 className="font-medium max-w-sm text-primary text-2xl md:text-3xl">
-                      {w.heading}
-                    </h4>
-                  </Reveal>
+                  <h4 className="font-medium max-w-sm text-primary text-2xl md:text-3xl">
+                    {w.heading}
+                  </h4>
 
                   <div className="flex flex-col gap-6 text-sm">
                     {w.paragraph.map((p, pIndex) => (
@@ -82,7 +83,7 @@ const WhyChoosePeaceShapers = () => {
 
               <AnimateIn
                 animation="slideUp"
-                delay={500 + index * 200}
+                // delay={500 + index * 200}
                 className={cn(
                   'relative overflow-hidden h-full rounded-[40px] md:rounded-[60px]',
                   Boolean(index % 2 != 0) ? 'hidden md:block' : 'hidden',

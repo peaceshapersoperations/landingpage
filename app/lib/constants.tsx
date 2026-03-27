@@ -183,14 +183,7 @@ export const why = [
   {
     heading: 'We are building something that does not yet exist in Nigeria.',
     image: '/why/1.jpg',
-    colors: {
-      heading: '',
-      icon: {
-        bg: '',
-        text: ''
-      },
-      paragraph: ''
-    },
+    iconColor: 'bg-primary',
     paragraph: [
       `Behavioural institutional safety as a defined professional field — the work of building the cultures, systems, and leadership capacities that determine whether schools and organisations are genuinely safe.`,
       `HSE safety exists. School discipline policies exist. What does not exist is an enterprise doing this work across both schools and organisations, with a standard, a faculty, and a replicable methodology. Built here, not imported.`,
@@ -199,6 +192,7 @@ export const why = [
   {
     heading: 'We work on systems, not symptoms.',
     image: '/why/2.jpg',
+    iconColor: 'bg-secondary',
     paragraph: [
       `Most organisations respond to safety incidents after they happen. We work on the conditions that produce them — the culture, the leadership behaviour, the reporting structures, the policies, and the skills that determine whether an institution is genuinely safe or simply reactive. `,
       `The difference between the two is not philosophical. It is measurable.`,
@@ -207,6 +201,7 @@ export const why = [
   {
     heading: 'We stay after the workshop.',
     image: '/why/3.jpg',
+    iconColor: 'bg-accent',
     paragraph: [
       `Every engagement includes post-engagement architecture — written reports, follow-up sessions, commitment tracking, and ongoing support.`,
       `A workshop without follow-through is an expensive good day. We design every engagement with what happens after the day in mind.`,
@@ -215,6 +210,7 @@ export const why = [
   {
     heading: 'We tell you what we find, not what you want to hear.',
     image: '/why/4.jpg',
+    iconColor: 'bg-orange-400',
     paragraph: [
       `The facilitator debrief report is an institutional safety intelligence document. The audit report names every gap we find, rated by risk level.`,
       ` We do not soften findings to protect relationships. Institutions that work with us know exactly where they stand`,
@@ -223,6 +219,7 @@ export const why = [
   {
     heading: 'Our work is Nigerian-specific by design.',
     image: '/why/5.jpeg',
+    iconColor: 'bg-cyan-400',
     paragraph: [
       `The dynamics that shape safety in Nigerian schools and workplaces — power distance, ethnic and regional complexity, economic pressure, the specific ways operates, the cultural norms around conflict and discipline — are not incidental. `,
       `They are the thing. Our frameworks are built around them. Generic models miss them entirely.`,

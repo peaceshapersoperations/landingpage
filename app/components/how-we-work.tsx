@@ -9,7 +9,7 @@ const HowWeWork = () => {
       <Container className="space-y-16 md:space-y-25">
         <div className="flex justify-center">
           <AnimateIn animation="slideUp" delay={50}>
-            <h2 className="relative z-10 text-4xl sm:text-5xl font-medium text-primary">
+            <h2 className="relative z-10 text-4xl sm:text-6xl font-medium text-primary">
               How we work
             </h2>
           </AnimateIn>
@@ -21,7 +21,7 @@ const HowWeWork = () => {
               <article className="border border-gray-200 rounded-[40px] md:rounded-[50px] space-y-6 p-10 h-full">
                 <img src="elements/whistle.png" className="w-20" alt="" />
 
-                <h2 className="text-3xl text-primary font-normal">Training</h2>
+                <h2 className="text-4xl text-primary font-normal">Training</h2>
 
                 <p className="text-slate-600 text-sm">
                   Workshops for school staff, students, parents, and corporate
@@ -56,7 +56,7 @@ const HowWeWork = () => {
               <article className="border border-gray-200 rounded-[40px] md:rounded-[50px] space-y-6 p-10 h-full">
                 <img src="elements/cctv.png" className="w-20" alt="" />
 
-                <h2 className="text-3xl text-primary font-normal">
+                <h2 className="text-4xl text-primary font-normal">
                   Safety System Design
                 </h2>
 
@@ -80,7 +80,7 @@ const HowWeWork = () => {
               <article className="border border-gray-200 rounded-[40px] md:rounded-[50px] space-y-6 p-10 h-full">
                 <img src="elements/check-list.png" className="w-20" alt="" />
 
-                <h2 className="text-3xl text-primary font-normal">
+                <h2 className="text-4xl text-primary font-normal">
                   Safety Audits{' '}
                 </h2>
 

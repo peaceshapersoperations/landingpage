@@ -19,7 +19,7 @@ const Footer = () => {
 
         <Container>
           <AnimateIn>
-            <article className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex flex-col items-center justify-center text-white  px-15 sm:px-0  before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-primary before:opacity-100 before:z-10 space-y-6">
+            <article className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex flex-col items-center justify-center text-white px-15 sm:px-0 before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-primary before:opacity-100 before:z-10 space-y-6">
               <h3 className="relative z-20 text-2xl sm:text-4xl font-medium max-w-100 text-center">
                 {sectionOne.article.heading}
               </h3>
@@ -39,7 +39,7 @@ const Footer = () => {
         </Container>
       </section>
 
-      <section className="border-t border-[#38385d] bg-primary min-h-40 text-center py-6 sm:py-10 relative overflow-hidden grid place-items-center">
+      <section className="border-t border-[#38385d] bg-primary  text-center py-6 sm:pb-10 relative overflow-hidden grid place-items-center">
         <AnimateIn animation='slideUp'>
           <h3
             className={cn(

@@ -40,7 +40,7 @@ const Navbar = () => {
         className={cn(
           'z-100 w-full top-0 will-change-transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
           isScrolled
-            ? 'sticky translate-y-0 opacity-100 scale-100 bg-white shadow-2xl py-2'
+            ? 'sticky translate-y-0 opacity-100 scale-100 bg-white shadow-lg py-2'
             : 'translate-y-3 opacity-90 scale-[0.98] py-4 bg-transparent',
         )}
       >
@@ -51,7 +51,7 @@ const Navbar = () => {
             )}
           >
             {/* Logo */}
-            <figure className="w-15 pl-4">
+            <figure className="w-15">
               <img
                 className="w-full h-full object-contain"
                 src={logo.src}
@@ -72,7 +72,7 @@ const Navbar = () => {
                         className={cn(
                           'text-base font-normal transition-colors duration-300',
                           'text-gray-500 hover:text-black',
-                          active && 'text-accent hover:text-accent',
+                          active && 'text-secondary hover:text-accent',
                         )}
                       >
                         {item.label}

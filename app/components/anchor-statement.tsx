@@ -4,11 +4,11 @@ import AnimateIn from '@/components/ui/animate-in';
 
 const AnchorStatement = () => {
   return (
-    <section className="bg-gray-100 pb-10 md:pb-0 pt-10 md:pt-10 -mt-1">
+    <section className="bg-[#f8f3f0] pb-10 md:pb-0 pt-10 md:pt-10 -mt-1">
       <Container className="space-y-16 md:space-y-30">
         <div className="flex justify-center">
           <AnimateIn animation="slideUp" delay={50}>
-            <h2 className="relative z-10 text-4xl font-medium sm:text-5xl text-primary">
+            <h2 className="relative z-10 text-4xl font-medium sm:text-6xl text-primary">
               Anchor Statement
             </h2>
           </AnimateIn>
@@ -16,7 +16,7 @@ const AnchorStatement = () => {
 
         <div className="space-y-10 lg:space-y-16">
           <div className="grid grid-cols-1 gap-10 lg:gap-16 md:grid-cols-2 font-normal">
-            <AnimateIn animation="slideRight" delay={100} className="h-full">
+            <AnimateIn animation="slideUp" delay={100} className="h-full">
               <article className="flex flex-col h-full justify-center p-6 md:p-16 rounded-[30px] md:rounded-[50px] space-y-4 bg-white">
                 <Reveal direction="up" delay={150}>
                   <h3 className="text-4xl md:text-3xl text-accent">
@@ -32,7 +32,7 @@ const AnchorStatement = () => {
               </article>
             </AnimateIn>
 
-            <AnimateIn animation="slideLeft" delay={150}>
+            <AnimateIn animation="slideUp" delay={150}>
               <div className="flex flex-col md:flex-row rounded-[40px] md:rounded-[50px] overflow-hidden bg-white">
                 <figure className="pt-10 w-full bg-[#3483ad2d] h-70 md:h-70 overflow-hidden">
                   <img
@@ -69,7 +69,7 @@ const AnchorStatement = () => {
                   has all of these.
                 </p>
                 <Reveal direction="up" delay={350}>
-                  <h3 className="text-4xl md:text-6xl text-accent">
+                  <h3 className="text-4xl md:text-7xl text-accent">
                     Peace Shapers Africa is Building more.
                   </h3>
                 </Reveal>
@@ -78,7 +78,7 @@ const AnchorStatement = () => {
           </AnimateIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-10 lg:gap-16">
-            <AnimateIn animation="slideRight" delay={250}>
+            <AnimateIn animation="scaleIn" delay={250}>
               <div className="flex flex-col md:flex-row rounded-[40px] md:rounded-[50px] overflow-hidden bg-white">
                 <figure className="pt-10 w-full bg-[#3483ad2d] h-80 md:h-70 overflow-hidden">
                   <img
@@ -98,7 +98,7 @@ const AnchorStatement = () => {
               </div>
             </AnimateIn>
 
-            <AnimateIn animation="slideLeft" delay={300}>
+            <AnimateIn animation="scaleIn" delay={300}>
               <article className="flex flex-col h-full justify-center p-6 md:p-16 gap-4 rounded-[30px] md:rounded-[50px] bg-white">
                 <Reveal direction="up" delay={450}>
                   <h3 className="text-4xl md:text-3xl text-accent">

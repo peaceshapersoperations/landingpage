@@ -14,7 +14,7 @@ const HeroSection = () => {
       <section className="space-y-16">
         <article className="space-y-6">
           <Reveal delay={0} duration={400}>
-            <h1 className="text-5xl font-medium sm:text-6xl">
+            <h1 className="text-5xl font-medium sm:text-7xl">
               Safety is not a destination. It is a system.
             </h1>
           </Reveal>
