@@ -51,7 +51,7 @@ const Navbar = () => {
             )}
           >
             {/* Logo */}
-            <figure className="w-15">
+            <figure className="w-15 pl-3 md:pl-0">
               <img
                 className="w-full h-full object-contain"
                 src={logo.src}
