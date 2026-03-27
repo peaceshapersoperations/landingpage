@@ -1,1 +1,1 @@
-Peace Shapers Afric.
+Peace Shapers Africa.
