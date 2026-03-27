@@ -8,10 +8,11 @@ const WhyChoosePeaceShapers = () => {
   return (
     <section className="bg-[#f8f3f0] pb-20 md:pb-50 pt-20">
       <Container className="space-y-16 md:space-y-30">
-        <article className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-center">
+        {/* Header */}
+        <article className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-20 items-start">
           <AnimateIn animation="slideUp" delay={100}>
             <Reveal direction="up" delay={150}>
-              <h2 className="relative z-10 text-4xl font-medium sm:text-5xl text-primary">
+              <h2 className="relative z-10 text-5xl font-medium sm:text-6xl text-primary">
                 Why choose peace shapers
               </h2>
             </Reveal>
@@ -26,39 +27,43 @@ const WhyChoosePeaceShapers = () => {
           </AnimateIn>
         </article>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-20">
+        {/* Content */}
+        <section className="space-y-10 md:space-y-16">
           {why.map((w, index) => (
-            <>
+            <div
+              key={w.heading}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-20 items-stretch"
+            >
+              {/* Image */}
               <AnimateIn
                 animation="slideUp"
-                // delay={}
                 className={cn(
-                  'relative overflow-hidden h-full rounded-[40px] md:rounded-[60px]',
-                  Boolean(index % 2 == 0) ? 'block' : 'block md:hidden',
+                  'relative overflow-hidden rounded-[40px] md:rounded-[60px] aspect-[4/3]',
+                  index % 2 !== 0 && 'lg:order-2'
                 )}
               >
-                <figure>
+                <figure className="w-full h-full">
                   <img
                     src={w.image}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                    alt=""
+                    alt={w.heading}
+                    className="w-full h-full object-cover"
                   />
                 </figure>
               </AnimateIn>
 
+              {/* Text */}
               <AnimateIn
                 animation="slideUp"
-                // delay={400 + index * 200}
-                className="h-full"
+                className={cn(
+                  'h-full',
+                  index % 2 !== 0 && 'lg:order-1'
+                )}
               >
-                <article
-                  key={w.heading}
-                  className="flex flex-col items-start justify-center space-y-6 p-6 md:p-16 rounded-[30px] bg-white h-full"
-                >
+                <article className="flex flex-col items-start justify-center space-y-6 p-6 md:p-16 rounded-[30px] bg-white h-full">
                   <span
                     className={cn(
                       'w-14 h-14 inline-flex font-medium font-heading text-2xl md:text-4xl rounded-full text-white items-center justify-center',
-                      w.iconColor,
+                      w.iconColor
                     )}
                   >
                     {index + 1}
@@ -68,7 +73,7 @@ const WhyChoosePeaceShapers = () => {
                     {w.heading}
                   </h4>
 
-                  <div className="flex flex-col gap-6 text-sm">
+                  <div className="flex flex-col gap-6">
                     {w.paragraph.map((p, pIndex) => (
                       <p
                         key={pIndex}
@@ -80,24 +85,7 @@ const WhyChoosePeaceShapers = () => {
                   </div>
                 </article>
               </AnimateIn>
-
-              <AnimateIn
-                animation="slideUp"
-                // delay={500 + index * 200}
-                className={cn(
-                  'relative overflow-hidden h-full rounded-[40px] md:rounded-[60px]',
-                  Boolean(index % 2 != 0) ? 'hidden md:block' : 'hidden',
-                )}
-              >
-                <figure>
-                  <img
-                    src="who-we-work-for.jpg"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                    alt=""
-                  />
-                </figure>
-              </AnimateIn>
-            </>
+            </div>
           ))}
         </section>
       </Container>

@@ -12,7 +12,7 @@ const ProblemWeSolve = () => {
     <section className="bg-white py-20 md:py-0">
       <Container className="">
         <AnimateIn animation="slideUp">
-          <div className="h-full md:h-160 grid grid-rows-[400px_1fr] md:grid-rows-1 grid-cols-1 md:grid-cols-[1fr_1fr] rounded-[40px] md:rounded-[50px] overflow-hidden">
+          <div className="h-full lg:h-160 grid grid-rows-[400px_1fr] lg:grid-rows-1 grid-cols-1 lg:grid-cols-[1fr_1fr] rounded-[40px] md:rounded-[50px] overflow-hidden">
           <figure className="relative block overflow-hidden bg-slate-100">
             <video
               ref={videoRef}

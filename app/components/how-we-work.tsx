@@ -9,14 +9,14 @@ const HowWeWork = () => {
       <Container className="space-y-16 md:space-y-25">
         <div className="flex justify-center">
           <AnimateIn animation="slideUp" delay={50}>
-            <h2 className="relative z-10 text-4xl sm:text-6xl font-medium text-primary">
+            <h2 className="relative z-10 text-5xl sm:text-6xl font-medium text-primary">
               How we work
             </h2>
           </AnimateIn>
         </div>
 
         <div className="grid gap-10 grid-cols-1">
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <section className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <AnimateIn animation="slideUp" delay={100} className="h-full">
               <article className="border border-gray-200 rounded-[40px] md:rounded-[50px] space-y-6 p-10 h-full">
                 <img src="elements/whistle.png" className="w-20" alt="" />

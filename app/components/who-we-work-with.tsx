@@ -10,7 +10,7 @@ const WhoWeWorkWith = () => {
   const auditsCount = useCountUp({ end: 2, duration: 1000 });
   return (
     <section className="bg-white relative pt-30 pb-5 md:pb-50 md:pt-50">
-      <Container className="grid grid-cols-1 md:grid-cols-2 gap-20">
+      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-20">
         <AnimateIn animation="slideRight">
           <figure className="relative overflow-hidden w-full rounded-2xl">
             <img
@@ -24,7 +24,7 @@ const WhoWeWorkWith = () => {
         <section className="grid gap-20">
           <div className="flex flex-col text-start gap-6 items-start justify-center">
             <Reveal direction="up">
-              <h2 className="relative z-10 text-4xl font-medium sm:text-6xl text-primary">
+              <h2 className="relative z-10 text-5xl font-medium sm:text-6xl text-primary">
                 Who we work with
               </h2>
             </Reveal>
