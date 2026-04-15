@@ -4,23 +4,32 @@ import { Tick02Icon } from '@hugeicons/core-free-icons';
 
 const WhoWeWorkWith = () => {
   return (
-    <section className="bg-[#5c5b76]">
-      <article className="text-center pt-10 overflow-hidden whitespace-nowrap">
-        <div className="inline-block animate-marquee">
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
+    <section className="">
+      <article className="text-center pt-0 md:pt-10 pb-6 md:pb-15 overflow-hidden whitespace-nowrap">
+        <div className="inline-block animate-marquee capitalize">
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
             who&nbsp;we&nbsp;work&nbsp;with
           </h3>
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
             who&nbsp;we&nbsp;work&nbsp;with
           </h3>
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            who&nbsp;we&nbsp;work&nbsp;with
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            who&nbsp;we&nbsp;work&nbsp;with
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            who&nbsp;we&nbsp;work&nbsp;with
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
             who&nbsp;we&nbsp;work&nbsp;with
           </h3>
         </div>
       </article>
 
       <Container className="pb-20 md:pb-20 pt-10">
-        <section className="grid gap-20 md:gap-30">
+        <section className="grid gap-20 md:gap-40">
           <article className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center gap-10">
             <figure className="hidden lg:block aspect-square md:aspect-4/3 rounded-[40px] md:rounded-[60px] overflow-hidden">
               <img
@@ -51,7 +60,7 @@ const WhoWeWorkWith = () => {
                 </figure>
               </div>
 
-              <ul className="space-y-2 sm:space-y-4 text-white/70 text-sm sm:text-base">
+              <ul className="space-y-2 sm:space-y-4 text-white/50 text-sm sm:text-base">
                 <li className="flex gap-2 items-center">
                   <HugeiconsIcon icon={Tick02Icon} />
                   Primary
@@ -102,7 +111,7 @@ const WhoWeWorkWith = () => {
                 </figure>
               </div>
 
-              <ul className="space-y-2 sm:space-y-4 text-white/70 text-sm sm:text-base">
+              <ul className="space-y-2 sm:space-y-4 text-white/50 text-sm sm:text-base">
                 <li className="flex gap-2 items-center">
                   <HugeiconsIcon icon={Tick02Icon} />
                   Private companies

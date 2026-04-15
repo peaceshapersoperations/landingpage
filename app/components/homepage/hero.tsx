@@ -11,7 +11,7 @@ const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <header className="bg-primary pt-5 pb-20 md:pt-20 md:pb-30">
+    <header className="bg-[#162134] pt-5 pb-20 md:pt-20 md:pb-30">
       <Container className="space-y-10 md:space-y-20">
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr] gap-0 md:gap-20 lg:gap-40 justify-between space-y-5 md:space-y-10">
           <article className="flex flex-col gap-5 lg:gap-10 text-3xl leading-9 md:text-3xl lg:text-5xl lg:leading-14 text-white font-normal">
@@ -28,12 +28,12 @@ const Hero = () => {
             </AnimateIn>
           </article>
 
-          <div className="space-y-8 pt-3">
+          <div className="space-y-15 md:space-y-8 pt-3">
             <AnimateIn animation="slideUp" delay={200}>
               <article className="space-y-4 text-sm md:text-base lg:text-base text-white/70 leading-relaxed font-light max-w-xl">
                 <p>
-                  Peace Shapers Africa designs, installs, and strengthens the
-                  safety systems that schools and organisations across Nigeria
+                  Peace Shapers Africa <strong className="font-light text-white">designs, installs, and strengthens the
+                  safety systems</strong> that schools and organisations across Nigeria
                   currently lack.
                 </p>
                 <p>Safety is not a destination. It is a system</p>

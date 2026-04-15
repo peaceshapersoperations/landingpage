@@ -8,7 +8,8 @@ interface VideoPlayerProps {
 }
 
 export default function VideoPlayer({ src, className = '' }: VideoPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -27,25 +28,43 @@ export default function VideoPlayer({ src, className = '' }: VideoPlayerProps) {
       setIsPlaying(false);
     };
 
+    const handleLoadedData = () => {
+      setIsLoading(false);
+    };
+
+    const handleError = () => {
+      setIsLoading(false);
+    };
+
     video.addEventListener('play', handlePlay);
     video.addEventListener('pause', handlePause);
     video.addEventListener('ended', handleEnded);
+    video.addEventListener('loadeddata', handleLoadedData);
+    video.addEventListener('error', handleError);
 
     return () => {
       video.removeEventListener('play', handlePlay);
       video.removeEventListener('pause', handlePause);
       video.removeEventListener('ended', handleEnded);
+      video.removeEventListener('loadeddata', handleLoadedData);
+      video.removeEventListener('error', handleError);
     };
   }, []);
 
-  const togglePlayPause = () => {
+  const togglePlayPause = async () => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (isPlaying) {
-      video.pause();
-    } else {
-      video.play();
+    try {
+      if (isPlaying) {
+        video.pause();
+      } else {
+        // iOS requires user interaction to play
+        await video.play();
+      }
+    } catch (error) {
+      console.error('Video play error:', error);
+      setIsPlaying(false);
     }
   };
 
@@ -58,11 +77,20 @@ export default function VideoPlayer({ src, className = '' }: VideoPlayerProps) {
         src={src}
         className="w-full h-full object-cover"
         playsInline
-        autoPlay
         muted
         loop
         preload="metadata"
+        webkit-playsinline="true"
+        x-webkit-airplay="allow"
+        data-wf-ignore="true"
       />
+
+      {/* Loading indicator */}
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+          <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+        </div>
+      )}
 
       {/* Play/Pause button overlay */}
       <div
@@ -74,6 +102,7 @@ export default function VideoPlayer({ src, className = '' }: VideoPlayerProps) {
           onClick={togglePlayPause}
           className={`pointer-events-auto bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border-white/20 ${isPlaying ? 'p-5 py-6' : ''}`}
           icon={isPlaying ? PauseIcon : PlayIcon}
+          type="button"
         >
           {!isPlaying ? 'Play' : 'Pause'}
         </Button>

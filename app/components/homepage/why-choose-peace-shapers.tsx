@@ -4,16 +4,25 @@ import Reveal from '../ui/reveal';
 
 const WhyChoosePeaceShapers = () => {
   return (
-    <section className="bg-[#5c5b76]">
-      <article className="text-center overflow-hidden whitespace-nowrap">
-        <div className="inline-block animate-marquee">
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+    <section className="">
+      <article className="text-center pt-0 md:pt-10 pb-6 md:pb-5 overflow-hidden whitespace-nowrap">
+        <div className="inline-block animate-marquee capitalize">
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
             why&nbsp;peace&nbsp;shapers&nbsp;
           </h3>
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
             why&nbsp;peace&nbsp;shapers&nbsp;
           </h3>
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            why&nbsp;peace&nbsp;shapers&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            why&nbsp;peace&nbsp;shapers&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            why&nbsp;peace&nbsp;shapers&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
             why&nbsp;peace&nbsp;shapers&nbsp;
           </h3>
         </div>

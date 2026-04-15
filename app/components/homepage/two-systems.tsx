@@ -5,17 +5,32 @@ import Reveal from '../ui/reveal';
 
 const TwoSystems = () => {
   return (
-    <section className="relative overflow-hidden isolate bg-[#5c5b76]">
-      <article className="text-center  overflow-hidden whitespace-nowrap">
+    <section className="relative overflow-hidden isolate">
+      <article className="text-center pt-8 overflow-hidden whitespace-nowrap">
         <div className="inline-block animate-marquee">
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
-            two&nbsp;system&nbsp;
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
           </h3>
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
-            two&nbsp;system&nbsp;
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
           </h3>
-          <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
-            two&nbsp;system&nbsp;
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
+          </h3>
+          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
+            two&nbsp;systems&nbsp;
           </h3>
         </div>
       </article>
@@ -33,7 +48,7 @@ const TwoSystems = () => {
               </figure>
 
               <div className="relative space-y-6 bg-primary backdrop-blur-3xl text-white rounded-b-[40px] p-6 md:p-8 lg:p-12 -mt-40 md:-mt-30 z-10">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium md:font-medium">
+                <h3 className="text-2xl md:text-3xl lg:text-3xl font-medium md:font-medium">
                   Safeguarding System
                 </h3>
 
@@ -68,7 +83,7 @@ const TwoSystems = () => {
               </figure>
 
               <div className="relative space-y-6 bg-primary backdrop-blur-3xl text-white rounded-b-[40px] p-6 md:p-8 lg:p-12 -mt-40 md:-mt-30 z-10">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium">
+                <h3 className="text-2xl md:text-3xl lg:text-3xl font-medium">
                   Violence Prevention <span>&</span> De
                   <span>-</span>
                   escalation System
