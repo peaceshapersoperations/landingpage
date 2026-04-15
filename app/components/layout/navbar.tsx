@@ -10,7 +10,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
   return (
     <nav className="bg-primary relative top-0 left-0 right-0 z-50">
-      <Container className="flex flex-wrap gap-y-5 justify-between gap-x-2 py-5 md:py-8">
+      <Container className="flex flex-wrap gap-y-5 justify-between gap-x-2 py-8 md:py-8">
         <div className="flex items-center md:gap-x-5 lg:gap-x-10">
           <Link to="/">
             <img

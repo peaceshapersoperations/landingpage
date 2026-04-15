@@ -4,7 +4,7 @@ import { Tick02Icon } from '@hugeicons/core-free-icons';
 
 const WhoWeWorkWith = () => {
   return (
-    <section className="bg-primary/80">
+    <section className="bg-[#5c5b76]">
       <article className="text-center pt-10 overflow-hidden whitespace-nowrap">
         <div className="inline-block animate-marquee">
           <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/5 leading-tight inline-block px-4">
@@ -82,7 +82,9 @@ const WhoWeWorkWith = () => {
 
           <article className="grid grid-cols-1 lg:grid-cols-[max-content_1fr] items-center gap-10">
             <div className="lg:p-10 space-y-4 relative z-10 text-white">
-              <h4 className="text-4xl md:text-5xl lg:text-6xl">Organisations</h4>
+              <h4 className="text-4xl md:text-5xl lg:text-6xl">
+                Organisations
+              </h4>
               <div className="flex">
                 <figure className="w-14 md:w-18 border-3 md:border-4 rounded-full">
                   <img

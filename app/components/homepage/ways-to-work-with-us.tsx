@@ -9,7 +9,7 @@ import AnimateIn from '../ui/animate-in';
 
 const WaysToWorkWithUs = () => {
   return (
-    <section className="bg-primary/80">
+    <section className="bg-[#5c5b76]">
       <Container className="max-w-360">
         <div className="pt-20 pb-20 lg:py-10 lg:pb-20 space-y-30">
           <section className="grid grid-cols-1 md:grid-cols-2 text-sm md:text-base text-white/50 lg:grid-cols-3 gap-20 md:gap-10">

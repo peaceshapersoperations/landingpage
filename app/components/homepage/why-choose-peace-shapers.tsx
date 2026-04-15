@@ -4,7 +4,7 @@ import Reveal from '../ui/reveal';
 
 const WhyChoosePeaceShapers = () => {
   return (
-    <section className="bg-primary/80">
+    <section className="bg-[#5c5b76]">
       <article className="text-center overflow-hidden whitespace-nowrap">
         <div className="inline-block animate-marquee">
           <h3 className="font-medium text-[4rem] lg:text-[10rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">

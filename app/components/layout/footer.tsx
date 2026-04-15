@@ -5,6 +5,7 @@ import Container from './container';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { cn } from '@/lib/utils';
 import AnimateIn from '../ui/animate-in';
+import { Download02Icon } from '@hugeicons/core-free-icons';
 
 const Footer = () => {
   const { sectionOne, sectionThree, sectionFour } = footer;
@@ -26,7 +27,7 @@ const Footer = () => {
 
               <div className="grid gap-2 items-center">
                 <Button
-                  icon={sectionOne.article.button.icon}
+                  icon={Download02Icon}
                   variant={'secondary'}
                   size="default"
                   className="relative z-20"

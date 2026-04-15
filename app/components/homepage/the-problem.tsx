@@ -18,7 +18,7 @@ const TheProblem = () => {
         ></path>
       </svg>
 
-      <section className="relative isolate bg-primary/80 overflow-hidden">
+      <section className="relative isolate bg-[#5c5b76] overflow-hidden">
         <Container className="pt-10 pb-0 md:py-20 lg:pt-25 lg:pb-20 space-y-10 md:space-y-10 grid place-content-center">
           <div className="grid grid-cols-1 items-start lg:grid-cols-[1fr_1fr] gap-10 lg:gap-10 xl:gap-20">
             <Reveal delay={300}>
@@ -45,7 +45,7 @@ const TheProblem = () => {
               <article className="hover:text-white">
                 <AnimateIn animation="slideUp" delay={100}>
                   <p>
-                    And yet  children are being harmed in schools where adults
+                    And yet children are being harmed in schools where adults
                     saw the signs and didn’t know what to do.
                   </p>
                 </AnimateIn>
@@ -66,9 +66,9 @@ const TheProblem = () => {
                 <AnimateIn animation="slideUp" delay={300}>
                   <p>
                     The problem is almost never the people. It is the absence of
-                    a system  the policies, the training, the protocols, the
-                    accountability structures  that tells people exactly what
-                    to do, who to tell, and what happens next.
+                    a system the policies, the training, the protocols, the
+                    accountability structures that tells people exactly what to
+                    do, who to tell, and what happens next.
                   </p>
                 </AnimateIn>
               </article>
