@@ -10,15 +10,17 @@ interface RevealProps {
   duration?: number;
   threshold?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
+  repeat?: boolean; // 👈 NEW PROP
 }
 
-const Reveal = ({ 
-  children, 
-  className, 
+const Reveal = ({
+  children,
+  className,
   delay = 0,
   duration = 700,
   threshold = 0.1,
-  direction = 'up'
+  direction = 'up',
+  repeat = false, // 👈 default = no repeat
 }: RevealProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -28,13 +30,22 @@ const Reveal = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+
+          // 👇 only stop observing if repeat is false
+          if (!repeat) {
+            observer.unobserve(entry.target);
+          }
+        } else {
+          // 👇 reset visibility when leaving viewport (for repeat)
+          if (repeat) {
+            setIsVisible(false);
+          }
         }
       },
       {
         threshold,
-        rootMargin: '0px 0px -50px 0px'
-      }
+        rootMargin: '0px 0px -50px 0px',
+      },
     );
 
     const currentRef = ref.current;
@@ -47,7 +58,7 @@ const Reveal = ({
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold]);
+  }, [threshold, repeat]);
 
   const getTransform = () => {
     switch (direction) {
@@ -72,7 +83,7 @@ const Reveal = ({
         isVisible
           ? 'opacity-100 blur-0 transform-none'
           : 'opacity-0 blur-sm transform',
-        className
+        className,
       )}
       style={{
         transform: isVisible ? 'none' : getTransform(),

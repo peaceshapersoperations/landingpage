@@ -1,163 +1,62 @@
-import { HugeiconsIcon } from '@hugeicons/react';
-import Container from './container';
-import { Menu01Icon, X } from '@hugeicons/core-free-icons';
-import { Button } from '../ui/button';
-import { navigation } from '../../lib/constants';
 import { Link, useLocation } from 'react-router';
+import Container from './container';
+import { navLinks } from '@/lib/constants';
+import { Button } from '../ui/button';
+import { Menu, ArrowUpRight01Icon } from '@hugeicons/core-free-icons';
 import { cn } from '@/lib/utils';
-import { useState, useEffect } from 'react';
-import Reveal from '../ui/reveal';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 const Navbar = () => {
-  const { logo, list, button } = navigation;
   const { pathname } = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const headerHeight =
-            window.innerHeight * (window.innerWidth >= 640 ? 1.6 : 1.25);
-
-          setIsScrolled(window.scrollY > headerHeight);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <>
-      <nav
-        className={cn(
-          'z-100 w-full top-0 will-change-transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
-          isScrolled
-            ? 'sticky translate-y-0 opacity-100 scale-100 bg-white shadow-lg py-2'
-            : 'translate-y-3 opacity-90 scale-[0.98] py-4 bg-transparent',
-        )}
-      >
-        <Container>
-          <div
-            className={cn(
-              'py-3 flex items-center justify-between transition-all duration-500',
-            )}
-          >
-            {/* Logo */}
-            <figure className="w-15 pl-3 md:pl-0">
-              <img
-                className="w-full h-full object-contain"
-                src={logo.src}
-                alt={logo.alt}
-              />
-            </figure>
+    <nav className="bg-primary relative top-0 left-0 right-0 z-50">
+      <Container className="flex flex-wrap gap-y-5 justify-between gap-x-2 py-5 md:py-8">
+        <div className="flex items-center md:gap-x-5 lg:gap-x-10">
+          <Link to="/">
+            <img
+              src="/logo/icon.png"
+              alt="Peace Shapers Africa Logo Icon"
+              className="h-16 w-16"
+            />
+          </Link>
 
-            {/* Desktop Navigation */}
-            <section>
-              <ul className="hidden lg:flex items-center gap-5 lg:gap-10">
-                {list.map((item) => {
-                  const active = pathname === item.href;
+          <ul className="hidden md:flex text-xs font-heading bg-white/20 backdrop-blur-3xl rounded-xl overflow-hidden">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.path;
 
-                  return (
-                    <li key={item.href}>
-                      <Link
-                        to={item.href}
-                        className={cn(
-                          'text-base font-normal transition-colors duration-300',
-                          'text-gray-500 hover:text-black',
-                          active && 'text-secondary hover:text-accent',
-                        )}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-
-            {/* Right Section */}
-            <section className="flex items-center gap-2">
-              {/* Mobile Menu Button */}
-              <button
-                type="button"
-                className="block lg:hidden rounded-full p-3 bg-secondary text-white transition-all duration-300 hover:scale-105 active:scale-95"
-                onClick={() => setIsMobileMenuOpen(true)}
-              >
-                <HugeiconsIcon icon={Menu01Icon} />
-              </button>
-
-              {/* CTA Button */}
-              <div className="hidden md:block">
-                <Link to={button.href}>
-                  <Button variant="secondary" size="lg" icon={button.icon}>
-                    {button.label}
-                  </Button>
-                </Link>
-              </div>
-            </section>
-          </div>
-        </Container>
-      </nav>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-100 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          {/* Floating Menu */}
-          <div
-            className="fixed top-5 right-6 z-50 bg-white rounded-lg shadow-xl p-4 w-64 animate-in fade-in zoom-in-95 duration-300"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header */}
-            <div className="flex items-center justify-end mb-4">
-              {/* <h3 className="text-lg font-semibold text-primary">Menu</h3> */}
-              <button
-                className="p-3 bg-slate-100 text-gray-800 hover:bg-gray-200 rounded-full transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <HugeiconsIcon icon={X} />
-              </button>
-            </div>
-
-            {/* Links */}
-            <ul className="space-y-2">
-              {list.map((item, index) => {
-                const active = pathname === item.href;
-
-                return (
-                  <Reveal key={item.href} delay={index * 100} duration={400}>
-                    <li>
-                      <Link
-                        to={item.href}
-                        className={cn(
-                          'block px-4 py-3 rounded-lg text-sm transition-all duration-300 border',
-                          active
-                            ? 'bg-secondary text-white border-transparent'
-                            : 'text-primary hover:bg-gray-100 border-gray-50',
-                        )}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  </Reveal>
-                );
-              })}
-            </ul>
-          </div>
+              return (
+                <li key={link.id} className="grid">
+                  <Link
+                    className={cn(
+                      'text-white/70 font-medium py-3.5 md:px-4 lg:px-6 flex items-center gap-3 group hover:opacity-70',
+                      isActive && 'bg-secondary text-white',
+                    )}
+                    to={link.path}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-      )}
-    </>
+
+        <div className="flex items-center space-x-2">
+          <Button
+            size="lg"
+            className="hidden sm:block"
+            variant="secondary"
+            icon={ArrowUpRight01Icon}
+          >
+            Get Started
+          </Button>
+
+          <button className="flex sm:hidden cursor-pointer items-center justify-center aspect-square p-4 bg-secondary text-white rounded-full">
+            <HugeiconsIcon icon={Menu} size={18} />
+          </button>
+        </div>
+      </Container>
+    </nav>
   );
 };
 

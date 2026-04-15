@@ -4,55 +4,42 @@ import { Button } from '../ui/button';
 import Container from './container';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { cn } from '@/lib/utils';
-import Reveal from '../ui/reveal';
 import AnimateIn from '../ui/animate-in';
 
 const Footer = () => {
-  const { sectionOne, sectionTwo, sectionThree, sectionFour } = footer;
+  const { sectionOne, sectionThree, sectionFour } = footer;
 
   return (
     <footer>
       <section className="relative overflow-hidden w-full h-100 sm:h-150">
-        <img src="footer.jpeg" className="w-full h-full object-cover" alt="" />
+        <img src="others/10.jpg" className="w-full h-full object-cover object-top" alt="" />
 
         <div className="absolute bottom-0 left-0 right-0 h-full bg-linear-to-t from-primary via-[#333254d2] sm:via-[#333254a8] to-[#333254a8]"></div>
 
         <Container>
           <AnimateIn>
-            <article className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex flex-col items-center justify-center text-white px-15 sm:px-0 before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-primary before:opacity-100 before:z-10 space-y-6">
-              <h3 className="relative z-20 text-2xl sm:text-4xl font-medium max-w-100 text-center">
-                {sectionOne.article.heading}
+            <article className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex flex-col items-center justify-center text-white px-15 sm:px-0 before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-primary before:opacity-100 before:z-10 space-y-10">
+              <h3 className="relative z-20 text-2xl sm:text-4xl font-normal max-w-150 text-center">
+                Your institution has people worth protecting. The system that
+                protects them doesn’t build itself.
               </h3>
-              <p className="relative z-20 text-sm mb-8 font-light text-center max-w-110">
-                {sectionOne.article.paragraph}
-              </p>
-              <Button
-                icon={sectionOne.article.button.icon}
-                variant={sectionOne.article.button.variant as any}
-                size="lg"
-                className="relative z-20"
-              >
-                {sectionOne.article.button.label}
-              </Button>
+
+              <div className="grid gap-2 items-center">
+                <Button
+                  icon={sectionOne.article.button.icon}
+                  variant={'secondary'}
+                  size="default"
+                  className="relative z-20"
+                >
+                  Download our Capability Statement
+                </Button>
+              </div>
             </article>
           </AnimateIn>
         </Container>
       </section>
 
-      <section className="border-t border-[#38385d] bg-primary  text-center py-6 sm:pb-10 relative overflow-hidden grid place-items-center">
-        <AnimateIn animation='slideUp'>
-          <h3
-            className={cn(
-              'font-semibold text-8xl leading-24 sm:text-[6rem] sm:leading-20 md:text-[7rem] md:leading-24 lg:text-[10rem] lg:leading-40 xl:text-[10rem] xl:leading-40 relative z-10 py-10 tracking-tight',
-              sectionTwo.article.color,
-            )}
-          >
-            Peace Shapers <br /> Africa
-          </h3>
-        </AnimateIn>
-      </section>
-
-      <section className="bg-primary px-4 sm:px-0">
+      <section className="bg-primary px-0 sm:px-0">
         <Container>
           <div className="border-t border-[#38385d] py-14 grid gap-20 grid-cols-1 xl:grid-cols-[max-content_1fr]">
             {/* Newsletter */}

@@ -42,9 +42,9 @@
 
 @theme inline {
   --font-family-recoleta: 'Recoleta', system-ui, sans-serif;
-  --font-family-poppins: 'Poppins', system-ui, sans-serif;
+  --font-family-inter: 'Inter', system-ui, sans-serif;
+  --font-family-super-youth: 'Super Youth', system-ui, sans-serif;
 
-  --font-serif: var(--font-family-recoleta);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -120,40 +120,6 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: #333254;
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: #ed7256;
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: #3482ad;
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
 /* Typography styles */
 h1,
 h2,
@@ -174,64 +140,31 @@ textarea,
 select,
 li,
 a {
-  font-family: var(--font-family-poppins);
+  font-family: var(--font-family-inter);
 }
 
 .font-heading {
-  font-family: var(--font-family-recoleta);
-
+  font-family: var(--font-family-inter);
 }
 
-.the_problem_we_solve_background {
-  background-image: url('scope/corporate-organizations.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* Video control animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
   }
-  to {
-    opacity: 1;
+  100% {
+    transform: translateX(-33.333%);
   }
 }
 
-@keyframes scale-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+  display: flex;
+  width: fit-content;
 }
 
-@keyframes slide-up {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.animate-marquee-reverse {
+  animation: marquee 10s linear infinite reverse;
+  display: flex;
+  width: fit-content;
 }
-
-.animate-fade-in {
-  animation: fade-in 0.3s ease-out;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.3s ease-out;
-}
-
-.animate-slide-up {
-  animation: slide-up 0.3s ease-out;
-}
-
-
