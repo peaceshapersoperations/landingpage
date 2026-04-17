@@ -27,7 +27,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="bg-[#1a1a2e]">
+    <html lang="en" className="bg-white">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,6 +41,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         <Scripts />
       </body>
+
+      {/* <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="-mt-20 sm:-mt-20 md:-mt-20 lg:-mt-50 xl:-mt-70 bg-gray-100"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,288L120,277.3C240,267,480,245,720,245.3C960,245,1200,267,1320,277.3L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+        ></path>
+      </svg> */}
     </html>
   );
 }

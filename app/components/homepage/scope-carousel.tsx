@@ -53,8 +53,8 @@ const ScopeCarousel = ({ onScopeChange }: ScopeCarouselProps) => {
 
               <TooltipContent
                 side="bottom"
-                arrowClassName="fill-secondary bg-secondary"
-                className="bg-secondary text-white rounded-full text-[10px]"
+                arrowClassName="fill-primary bg-primary"
+                className="bg-primary text-white rounded-full text-[10px]"
               >
                 <p>For {scope.name}</p>
               </TooltipContent>

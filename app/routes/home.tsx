@@ -1,18 +1,16 @@
 import Hero from '../components/homepage/hero';
-import TwoSystems from '@/components/homepage/two-systems';
+import TheSolution from '@/components/homepage/the-solution';
 import TheProblem from '@/components/homepage/the-problem';
-import WhoWeWorkWith from '@/components/homepage/who-we-work-with';
-import WaysToWorkWithUs from '@/components/homepage/ways-to-work-with-us';
 import WhyChoosePeaceShapers from '@/components/homepage/why-choose-peace-shapers';
+import OurImpact from '@/components/homepage/our-impact';
 
 const Home = () => {
   return (
     <>
       <Hero />
       <TheProblem />
-      <TwoSystems />
-      <WaysToWorkWithUs />
-      <WhoWeWorkWith />
+      <TheSolution />
+      <OurImpact />
       <WhyChoosePeaceShapers />
     </>
   );

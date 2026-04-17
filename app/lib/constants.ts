@@ -15,18 +15,28 @@ export const navLinks = [
   },
   {
     id: 2,
+    label: 'About',
+    path: '/about',
+  },
+  {
+    id: 3,
     label: 'What We Do',
     path: '/what-we-do',
   },
   {
-    id: 3,
+    id: 4,
+    label: 'Who we work with',
+    path: '/who-we-work-with',
+  },
+  {
+    id: 5,
     label: 'Safety Audits',
     path: '/safety-audits',
   },
   {
-    id: 4,
-    label: 'About',
-    path: '/about',
+    id: 6,
+    label: 'Contact',
+    path: '/contact',
   },
 ];
 
@@ -112,8 +122,8 @@ export const footer = {
         list: [
           {
             icon: CallIcon,
-            href: 'tel:+2348033333333',
-            label: '+234 803 333 3333',
+            href: 'tel:+2348162213205',
+            label: '+2348162213205',
             iconAlt: {
               color: 'text-secondary',
               icon: ArrowUpRight01Icon,
