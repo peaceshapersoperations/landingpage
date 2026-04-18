@@ -77,7 +77,7 @@ const Counter = ({
   }, [isVisible, end, duration, delay]);
 
   return (
-    <h3 ref={ref} className="text-4xl md:text-5xl font-bold text-secondary">
+    <h3 ref={ref} className="text-4xl md:text-5xl font-bold text-accent">
       <span>{prefix}</span>
       {count.toLocaleString()}
       <span>{suffix}</span>
@@ -108,9 +108,9 @@ const OurImpact = () => {
   ];
 
   return (
-    <section className="py-5 md:py-20">
+    <section className="pt-30 py-5 md:py-20 md:pt-20">
       <Container className="z-10">
-        <div className="flex flex-wrap items-center justify-center gap-20 md:gap-40">
+        <div className="flex flex-wrap items-center justify-center gap-x-20 gap-y-10 md:gap-40">
           {stats.map((stat, index) => (
             <AnimateIn
               key={index}
@@ -125,7 +125,7 @@ const OurImpact = () => {
                   duration={2500}
                   delay={stat.delay}
                 />
-                <p className="text-lg md:text-xl font-light text-primary/80 mt-4 mb-3">
+                <p className="text-lg md:text-lg font-light text-primary/80 mt-4 mb-3">
                   {stat.label}
                 </p>
               </div>

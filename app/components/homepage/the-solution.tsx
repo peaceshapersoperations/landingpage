@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import {
-  ArrowRight02FreeIcons,
   ArrowLeft01Icon,
   ArrowRight01Icon,
 } from '@hugeicons/core-free-icons';
@@ -9,7 +8,7 @@ import Container from '../layout/container';
 import { Button } from '../ui/button';
 import Reveal from '../ui/reveal';
 
-const AUTOPLAY_DELAY = 4000; // must be > transition duration
+const AUTOPLAY_DELAY = 4000;
 
 const TheSolution = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,8 +53,10 @@ const TheSolution = () => {
   // --- Autoplay ---
   const startAutoplay = () => {
     stopAutoplay();
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    intervalRef.current = window.setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === totalSlides - 1 ? 0 : prev + 1
+      );
     }, AUTOPLAY_DELAY);
   };
 
@@ -86,7 +87,7 @@ const TheSolution = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden isolate grid gap-6 md:gap-5 pt-30">
+    <section className="bg-gray-200 relative overflow-hidden isolate grid gap-6 md:gap-5 py-30">
       <header className="text-center text-3xl leading-11 md:text-3xl lg:text-4xl lg:leading-14 font-bold text-primary">
         <h2>Our Solution</h2>
       </header>
@@ -123,14 +124,20 @@ const TheSolution = () => {
           onMouseEnter={stopAutoplay}
           onMouseLeave={startAutoplay}
         >
-          <div
-            className="flex transition-transform duration-500 ease-out will-change-transform"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {solutions.map((solution) => (
-              <div key={solution.id} className="w-full shrink-0">
+          <div className="relative w-full">
+            {solutions.map((solution, index) => (
+              <div
+                key={solution.id}
+                className={`${
+                  currentIndex === index ? 'relative' : 'absolute inset-0'
+                } transition-all duration-700 ease-in-out ${
+                  currentIndex === index
+                    ? 'opacity-100 scale-100 z-10'
+                    : 'opacity-0 scale-95 z-0 pointer-events-none'
+                }`}
+              >
                 <Reveal repeat className="h-full">
-                  <article className="grid grid-cols-1 lg:grid-cols-2 place-items-center bg-primary rounded-[40px] md:rounded-[60px] overflow-hidden">
+                  <article className="grid grid-cols-1 lg:grid-cols-2 place-items-center bg-secondary rounded-[40px] md:rounded-[60px] overflow-hidden">
                     {/* Image */}
                     <figure className="w-full bg-accent/50 aspect-4/3.5 overflow-hidden">
                       <img
@@ -141,7 +148,7 @@ const TheSolution = () => {
                     </figure>
 
                     {/* Content */}
-                    <div className="relative space-y-12 text-white p-6 md:p-10 lg:p-25">
+                    <div className="relative space-y-12 text-white p-8 md:p-10 lg:p-25">
                       <div className="space-y-6">
                         <h3
                           className="text-2xl md:text-4xl font-normal"
@@ -149,17 +156,13 @@ const TheSolution = () => {
                             __html: solution.title,
                           }}
                         />
-                        <p className="text-white/80 text-base font-light leading-relaxed">
+                        <p className="text-white/80 text-sm md:text-base font-light leading-relaxed">
                           {solution.description}
                         </p>
                       </div>
 
                       <div>
-                        <Button
-                          variant="secondary"
-                          size="sm"
-                          icon={ArrowRight02FreeIcons}
-                        >
+                        <Button variant="white" size="sm">
                           See what's included
                         </Button>
                       </div>
@@ -179,8 +182,8 @@ const TheSolution = () => {
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full ${
                 currentIndex === index
-                  ? 'bg-white w-8 h-2'
-                  : 'bg-white/30 w-2 h-2 hover:bg-white/50'
+                  ? 'bg-primary w-8 h-2'
+                  : 'bg-primary/30 w-2 h-2 hover:bg-primary/50'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

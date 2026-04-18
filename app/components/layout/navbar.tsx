@@ -12,9 +12,9 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <nav className="bg-white relative top-0 left-0 right-0 z-60">
-      <Container className="flex flex-wrap gap-y-5 justify-between gap-x-2 py-8 md:py-8">
-        <div className="flex items-center md:gap-x-5 lg:gap-x-10">
+    <nav className="bg-gray-200 relative top-0 left-0 right-0 z-60">
+      <Container className="flex md:flex-col lg:flex-row gap-y-5 justify-between gap-x-2 py-8 md:py-8">
+        <div className="grid grid-cols-[auto_1fr] items-center justify-between gap-x-5 lg:gap-x-10">
           <Link to="/">
             <img
               src="/logo/icon-new.png"
@@ -23,16 +23,16 @@ const Navbar = () => {
             />
           </Link>
 
-          <ul className="hidden md:flex text-sm font-heading bg-primary/10 backdrop-blur-3xl rounded-xl overflow-hidden">
+          <ul className="hidden sm:flex text-sm font-heading overflow-hidden bg-white backdrop-blur-3xl rounded-xl">
             {navLinks.map((link) => {
               const isActive = pathname === link.path;
 
               return (
-                <li key={link.id} className="grid">
+                <li key={link.id} className="flex shrink-0">
                   <Link
                     className={cn(
-                      'text-primary/90 font-light py-3.5 md:px-4 lg:px-4 flex items-center gap-3 group hover:opacity-70',
-                      isActive && 'bg-primary text-white',
+                      'text-primary/90 font-light py-3.5 sm:px-4 lg:px-5 flex items-center gap-3 group hover:opacity-70',
+                      isActive && 'bg-secondary text-white',
                     )}
                     to={link.path}
                   >
@@ -46,8 +46,8 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-2">
           <Button
-            size="lg"
-            className="hidden sm:block"
+            size="default"
+            className="hidden lg:block"
             variant="secondary"
             icon={ArrowRight02FreeIcons}
           >

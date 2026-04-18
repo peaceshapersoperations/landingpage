@@ -120,6 +120,10 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+  font-size: clamp(15px, 0.3vw + 12px, 15px);
+}
+
 /* Typography styles */
 h1,
 h2,

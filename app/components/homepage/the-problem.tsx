@@ -2,20 +2,19 @@ import Container from '../layout/container';
 import AnimateIn from '../ui/animate-in';
 import Reveal from '../ui/reveal';
 import { Button } from '../ui/button';
-import { ArrowRight02FreeIcons } from '@hugeicons/core-free-icons';
 
 const TheProblem = () => {
   return (
     <>
       <section className="relative isolate overflow-hidden">
-        <Container className="pt-10 pb-0 md:py-20 lg:py-30 space-y-10 md:space-y-15 grid place-content-center">
+        <Container className="pt-10 pb-10 md:py-20 lg:py-30 space-y-10 md:space-y-15 grid place-content-center">
           <AnimateIn animation="slideUp">
             <header className="text-center text-3xl leading-11 md:text-3xl lg:text-4xl lg:leading-14 font-bold text-primary">
               <h3>The Problem</h3>
             </header>
           </AnimateIn>
 
-          <div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-y-10 gap-x-15">
             <Reveal delay={300} className="relative z-10 h-full">
               <figure className="relative aspect-square rounded-[40px] md:rounded-[60px] overflow-hidden h-full">
                 <img
@@ -26,7 +25,7 @@ const TheProblem = () => {
               </figure>
             </Reveal>
 
-            <section className="grid gap-8 md:gap-6 text-start md:text-start text-sm md:text-base lg:text-base text-primary/80 leading-relaxed font-light max-w-xl">
+            <section className="grid gap-8 md:gap-6 text-start md:text-start text-sm md:text-base lg:text-base text-primary/90 md:text-primary/80 leading-relaxed font-light max-w-xl">
               <article className="hover:text-primary">
                 <AnimateIn animation="slideUp">
                   <p>
@@ -81,8 +80,8 @@ const TheProblem = () => {
                   </p>
                 </AnimateIn>
               </article>
-              <AnimateIn animation="slideUp" delay={400} className="mt-8">
-                <Button variant="secondary" icon={ArrowRight02FreeIcons}>
+              <AnimateIn animation="slideUp" delay={400}>
+                <Button variant="accent" >
                   See how the system works
                 </Button>
               </AnimateIn>

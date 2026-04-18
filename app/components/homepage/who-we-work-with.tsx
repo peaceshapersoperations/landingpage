@@ -1,148 +1,126 @@
 import { HugeiconsIcon } from '@hugeicons/react';
 import Container from '../layout/container';
 import { Tick02Icon } from '@hugeicons/core-free-icons';
+import AnimateIn from '../ui/animate-in';
 
 const WhoWeWorkWith = () => {
   return (
-    <section className="">
-      <article className="text-center pt-0 md:pt-10 pb-6 md:pb-15 overflow-hidden whitespace-nowrap">
-        <div className="inline-block animate-marquee capitalize">
-          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
-            who&nbsp;we&nbsp;work&nbsp;with
-          </h3>
-          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
-            who&nbsp;we&nbsp;work&nbsp;with
-          </h3>
-          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
-            who&nbsp;we&nbsp;work&nbsp;with
-          </h3>
-          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
-            who&nbsp;we&nbsp;work&nbsp;with
-          </h3>
-          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
-            who&nbsp;we&nbsp;work&nbsp;with
-          </h3>
-          <h3 className="font-medium text-[3rem] lg:text-[3rem] text-white/8  md:text-white/8 leading-tight inline-block px-4">
-            who&nbsp;we&nbsp;work&nbsp;with
-          </h3>
-        </div>
-      </article>
+    <section className="bg-gray-200">
+      <Container className="pb-20 pt-5 md:pt-20 md:pb-30">
+        <section className="grid gap-10 md:gap-10">
+          <AnimateIn animation="slideUp">
+            <article className="grid grid-cols-1 lg:grid-cols-2 gap-y-10">
+              <figure className="aspect-square md:aspect-4/3 rounded-[40px] md:rounded-[60px] overflow-hidden">
+                <img
+                  src="who-we-work-with/1.jpg"
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
+              </figure>
 
-      <Container className="pb-20 md:pb-20 pt-10">
-        <section className="grid gap-20 md:gap-40">
-          <article className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center gap-10">
-            <figure className="hidden lg:block aspect-square md:aspect-4/3 rounded-[40px] md:rounded-[60px] overflow-hidden">
-              <img
-                src="who-we-work-with/1.jpg"
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </figure>
+              <div className="rounded-[40px] md:rounded-[60px] flex flex-col justify-center p-0 lg:px-30 lg:p-10 space-y-5 lg:space-y-10 text-primary">
+                <h4 className="text-2xl md:text-3xl lg:text-4xl text-primary">
+                  Schools&nbsp;&nbsp;
+                </h4>
 
-            <div className="lg:p-10 space-y-4 text-white/70">
-              <h4 className="text-4xl md:text-5xl lg:text-6xl text-white">
-                Schools&nbsp;&nbsp;
-              </h4>
-              <div className="flex">
-                <figure className="w-14 md:w-18 border-3 md:border-4 rounded-full">
-                  <img
-                    src="who-we-work-with/head-2.png"
-                    className="w-full h-full object-cover"
-                    alt=""
-                  />
-                </figure>
-                <figure className="-ml-4 w-14 md:w-18 border-3 md:border-4 rounded-full">
-                  <img
-                    src="who-we-work-with/head-4.png"
-                    className="w-full h-full object-cover"
-                    alt=""
-                  />
-                </figure>
+                <ul className="space-y-2 sm:space-y-4 text-base sm:text-base text-primary/90 font-light">
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    Primary
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    Secondary
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    Boarding
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    International
+                  </li>
+                </ul>
               </div>
+            </article>
+          </AnimateIn>
 
-              <ul className="space-y-2 sm:space-y-4 text-white/50 text-sm sm:text-base">
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  Primary
-                </li>
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  Secondary
-                </li>
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  Boarding
-                </li>
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  International
-                </li>
-              </ul>
-            </div>
+          <AnimateIn delay={200} animation="slideUp">
+            <article className="grid grid-cols-1 lg:grid-cols-2 gap-y-10">
+              <figure className="aspect-square md:aspect-4/3 rounded-[40px] md:rounded-[60px] overflow-hidden lg:order-last">
+                <img
+                  src="who-we-work-with/2.jpg"
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
+              </figure>
 
-            <figure className="block lg:hidden aspect-square md:aspect-video rounded-[40px] md:rounded-[60px] overflow-hidden">
-              <img
-                src="who-we-work-with/1.jpg"
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </figure>
-          </article>
+              <div className="rounded-[40px] md:rounded-[60px] flex flex-col justify-center p-0 md:px-20 xl:px-40 lg:p-10 space-y-5 lg:space-y-10 text-primary">
+                <h4 className="text-3xl md:text-3xl lg:text-4xl">
+                  Organisations
+                </h4>
 
-          <article className="grid grid-cols-1 lg:grid-cols-[max-content_1fr] items-center gap-10">
-            <div className="lg:p-10 space-y-4 relative z-10 text-white">
-              <h4 className="text-4xl md:text-5xl lg:text-6xl">
-                Organisations
-              </h4>
-              <div className="flex">
-                <figure className="w-14 md:w-18 border-3 md:border-4 rounded-full">
-                  <img
-                    src="who-we-work-with/head-1.png"
-                    className="w-full h-full object-cover"
-                    alt=""
-                  />
-                </figure>
-                <figure className="-ml-4 w-14 md:w-18 border-3 md:border-4 rounded-full">
-                  <img
-                    src="who-we-work-with/head-3.png"
-                    className="w-full h-full object-cover"
-                    alt=""
-                  />
-                </figure>
+                <ul className="space-y-2 sm:space-y-4 text-sm sm:text-base text-primary/90 font-light">
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    Private companies
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    NGOs & development organisations
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    Faith-based organisations & churches
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    Hospitals & healthcare institutions
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <HugeiconsIcon
+                      icon={Tick02Icon}
+                      size={20}
+                      className="text-primary"
+                    />
+                    Government agencies & MDAs
+                  </li>
+                </ul>
               </div>
-
-              <ul className="space-y-2 sm:space-y-4 text-white/50 text-sm sm:text-base">
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  Private companies
-                </li>
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  NGOs & development organisations
-                </li>
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  Faith-based organisations & churches
-                </li>
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  Hospitals & healthcare institutions
-                </li>
-                <li className="flex gap-2 items-center">
-                  <HugeiconsIcon icon={Tick02Icon} />
-                  Government agencies & MDAs
-                </li>
-              </ul>
-            </div>
-
-            <figure className="aspect-square md:aspect-4/3 rounded-[40px] md:rounded-[60px] overflow-hidden">
-              <img
-                src="who-we-work-with/2.jpg"
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </figure>
-          </article>
+            </article>
+          </AnimateIn>
         </section>
       </Container>
     </section>
