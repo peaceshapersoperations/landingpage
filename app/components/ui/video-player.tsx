@@ -98,7 +98,7 @@ export default function VideoPlayer({ src, className = '' }: VideoPlayerProps) {
       >
         <Button
           size={isPlaying ? 'sm' : 'lg'}
-          variant="accent"
+          colorScheme="accent"
           onClick={togglePlayPause}
           className={`pointer-events-auto bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border-white/20 ${isPlaying ? 'p-5 py-6' : ''}`}
           icon={isPlaying ? PauseIcon : PlayIcon}

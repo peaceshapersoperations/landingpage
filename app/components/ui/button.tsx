@@ -6,119 +6,150 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full text-sm font-normal transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive group relative overflow-hidden",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transform active:scale-95 hover:scale-105",
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        primary: 'bg-primary text-white hover:bg-primary/90',
-        accent: 'bg-accent text-white hover:bg-accent/90',
-        white: 'bg-white text-primary hover:bg-white/90',
-        destructive:
-          'bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
-        outline:
-          'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
-        secondary: 'bg-secondary text-white hover:bg-secondary/80',
-        ghost:
-          'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
-        link: 'text-primary underline-offset-4 hover:underline',
+        filled: '',
+        outline: '',
+      },
+      colorScheme: {
+        dark: '',
+        white: '',
+        primary: '',
+        secondary: '',
+        accent: '',
       },
       size: {
-        default: 'h-11 px-4 py-4',
-        sm: 'h-9 px-3 py-4 text-xs',
-        lg: 'h-13 px-6 py-7 text-base',
-        icon: 'size-11',
+        xs: 'h-6 px-3 py-4 has-[>svg]:px-2 text-xs',
+        sm: 'h-8 px-4 py-5 has-[>svg]:px-3 text-xs',
+        default: 'h-10 px-6 py-6 has-[>svg]:px-4',
+        lg: 'h-12 px-8 py-7 has-[>svg]:px-6 text-base',
+        xl: 'h-14 px-10 py-4 has-[>svg]:px-8 text-lg',
+        icon: 'size-10 p-0',
+        'icon-xs': 'size-6 p-0',
+        'icon-sm': 'size-8 p-0',
+        'icon-lg': 'size-12 p-0',
+        'icon-xl': 'size-14 p-0',
       },
     },
+    compoundVariants: [
+      // Filled variants
+      {
+        variant: 'filled',
+        colorScheme: 'primary',
+        className:
+          'bg-primary text-primary-foreground hover:bg-primary/90',
+      },
+      {
+        variant: 'filled',
+        colorScheme: 'secondary',
+        className:
+          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+      },
+      {
+        variant: 'filled',
+        colorScheme: 'accent',
+        className:
+          'bg-accent text-accent-foreground hover:bg-accent/80',
+      },
+      {
+        variant: 'filled',
+        colorScheme: 'dark',
+        className:
+          'bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200',
+      },
+      {
+        variant: 'filled',
+        colorScheme: 'white',
+        className:
+          'bg-[#fff] border border-[#fff] text-primary',
+      },
+      // Outline variants
+      {
+        variant: 'outline',
+        colorScheme: 'primary',
+        className:
+          'border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground',
+      },
+      {
+        variant: 'outline',
+        colorScheme: 'secondary',
+        className:
+          'border border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground',
+      },
+      {
+        variant: 'outline',
+        colorScheme: 'accent',
+        className:
+          'border border-accent text-accent bg-transparent hover:bg-accent hover:text-accent-foreground',
+      },
+      {
+        variant: 'outline',
+        colorScheme: 'dark',
+        className:
+          'border border-gray-900 text-gray-900 bg-transparent hover:bg-gray-900 hover:text-white dark:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900',
+      },
+      {
+        variant: 'outline',
+        colorScheme: 'white',
+        className:
+          'border border-[#fff] text-[#fff] bg-transparent hover:bg-[#fff] hover:text-gray-900',
+      },
+    ],
     defaultVariants: {
-      variant: 'default',
+      variant: 'filled',
+      colorScheme: 'primary',
       size: 'default',
     },
   },
 );
 
-interface ButtonProps
-  extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+export interface ButtonProps
+  extends React.ComponentProps<'button'>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
-  icon?: any;
+  icon?: any; // Hugeicons icon component from @hugeicons/core-free-icons
+  iconPosition?: 'left' | 'right';
+  iconSize?: number;
 }
 
-function Button({
-  className,
-  variant = 'default',
-  size = 'default',
-  asChild = false,
-  icon,
-  children,
-  ...props
-}: ButtonProps) {
-  const Comp = asChild ? Slot.Root : 'button';
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      variant,
+      colorScheme,
+      size,
+      asChild = false,
+      icon,
+      iconPosition = 'left',
+      iconSize = 16,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    const Comp = asChild ? Slot.Root : 'button';
 
-  const isPrimary = variant === 'primary';
-  const isAccent = variant === 'accent';
-  const isSecondary = variant === 'secondary';
-  const isWhite = variant === 'white';
+    const iconElement = icon ? (
+      <HugeiconsIcon icon={icon} size={iconSize} className="shrink-0" />
+    ) : null;
 
-  let iconBgColor = 'bg-primary';
-  let iconTextColor = 'text-white';
-
-  if (isPrimary) {
-    iconBgColor = 'bg-secondary';
-    iconTextColor = 'text-primary-foreground';
-  } else if (isAccent) {
-    iconBgColor = 'bg-white';
-    iconTextColor = 'text-accent';
-  } else if (isSecondary) {
-    iconBgColor = 'bg-white';
-    iconTextColor = 'text-secondary';
-  } else if (isWhite) {
-    iconBgColor = 'bg-primary';
-    iconTextColor = 'text-white';
-  }
-
-  return (
-    <Comp
-      data-slot="button"
-      data-variant={variant}
-      data-size={size}
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    >
-      <div className="flex items-center gap-3 relative h-full">
-        <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-          {children}
-        </span>
-        <span className="absolute left-0 flex items-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-          {children}
-        </span>
-        {icon && (
-          <div
-            className={cn(
-              'flex items-center justify-center rounded-full p-1.5 relative',
-              iconBgColor,
-            )}
-          >
-            <HugeiconsIcon
-              icon={icon}
-              className={cn(
-                'size-3 transition-all duration-300 ease-in-out group-hover:translate-x-full group-hover:opacity-0',
-                iconTextColor,
-              )}
-            />
-            <HugeiconsIcon
-              icon={icon}
-              className={cn(
-                'absolute size-4 transition-all duration-300 ease-in-out translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100',
-                iconTextColor,
-              )}
-            />
-          </div>
+    return (
+      <Comp
+        className={cn(
+          buttonVariants({ variant, colorScheme, size, className }),
         )}
-      </div>
-    </Comp>
-  );
-}
+        ref={ref}
+        {...props}
+      >
+        {iconPosition === 'left' && iconElement}
+        {children}
+        {iconPosition === 'right' && iconElement}
+      </Comp>
+    );
+  },
+);
+Button.displayName = 'Button';
 
 export { Button, buttonVariants };

@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "landingpage",
+  "name": "app-name-here",
   "compatibility_date": "2025-04-04",
   "observability": {
     "enabled": true,
